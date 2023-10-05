@@ -42,11 +42,13 @@ const MainPage = ({ posts }) => {
       {posts.map((post, index) => (
         <div key={index} className="post-container">
           <div className="image-container">
-            <img
-              src={post.image}
-              alt={post.title}
-              className="post-image" // Added CSS class for images
-            />
+            <Link to={`/posts/${index}`}>
+              <img
+                src={post.image}
+                alt={post.title}
+                className="post-image" // Added CSS class for images
+              />
+            </Link>
           </div>
           <div className="post-details">
             <Link
@@ -63,6 +65,7 @@ const MainPage = ({ posts }) => {
 };
 
 export default MainPage;
+
 
 
 
