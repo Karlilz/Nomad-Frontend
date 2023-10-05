@@ -11,8 +11,8 @@ const WelcomePage = () => {
 
   return (
     <div className="welcome-container">
-      <h1 style={{fontFamily:"Pacifico", fontSize:"65px"}} className="welcome-title">Nom@d</h1>
-      <h2>Travel the World, One Post at a Time</h2>
+      <h1 style={{fontFamily:"Pacifico", fontSize:"75px"}} className="welcome-title">Nom@d</h1>
+      <h2  style={{fontFamily:"Quicksand", fontSize:"35px"}}>Travel the World, One Post at a Time</h2>
 
       {showSignUp ? (
         <SignUpPage />
@@ -20,10 +20,12 @@ const WelcomePage = () => {
         <LoginPage />
       ) : (
         <div className="welcome-buttons">
-          <p>
-            New user? <Link to="/signup" className="welcome-button">Sign Up</Link>
+          <p style={{fontFamily:"Quicksand", fontSize:"18px"}}>
+            New user? 
+            <Link to="/signup" className="welcome-button">Sign Up</Link>
           </p>
-          <p>
+
+          <p style={{fontFamily:"Quicksand", fontSize:"18px"}}>
             Already have an account?{' '}
             <Link to="/login" className="welcome-button">Login</Link>
           </p>
@@ -34,3 +36,6 @@ const WelcomePage = () => {
 };
 
 export default WelcomePage;
+
+
+

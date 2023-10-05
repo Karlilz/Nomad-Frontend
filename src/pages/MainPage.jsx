@@ -9,15 +9,17 @@
 //       {posts.map((post, index) => (
 //         <div key={index} className="post-container">
 //           <div className="image-container">
-//             <img src={post.image} alt={post.title} />
+//             <Link to={`/posts/${index}`}>
+//               <img src={post.image} alt={post.title} className="post-image"/>
+//             </Link>
 //           </div>
 //           <div className="post-details">
-//           <Link
-//                 to={`/posts/${index}`}
-//                 style={{ textDecoration: 'none' }} // Remove underline
-//               >
-//                 <h3 style={{ fontSize: '18px' }}>{post.title}</h3>
-//               </Link>
+//             <Link
+//               to={`/posts/${index}`}
+//               style={{ textDecoration: 'none' }}
+//             >
+//               <h3 style={{ fontSize: '18px', color: 'black', fontFamily:"Quicksand" }}>{post.title}</h3>
+//             </Link>
 //           </div>
 //         </div>
 //       ))}
@@ -26,9 +28,6 @@
 // };
 
 // export default MainPage;
-
-
-
 
 
 import React from 'react';
@@ -43,19 +42,12 @@ const MainPage = ({ posts }) => {
         <div key={index} className="post-container">
           <div className="image-container">
             <Link to={`/posts/${index}`}>
-              <img
-                src={post.image}
-                alt={post.title}
-                className="post-image" // Added CSS class for images
-              />
+              <img src={post.image} alt={post.title} className="post-image" />
             </Link>
           </div>
           <div className="post-details">
-            <Link
-              to={`/posts/${index}`}
-              style={{ textDecoration: 'none' }}
-            >
-              <h3 style={{ fontSize: '18px', color: 'black' }}>{post.title}</h3>
+            <Link to={`/posts/${index}`} style={{ textDecoration: 'none' }}>
+              <h3 style={{ fontSize: '30px', color: 'black', fontFamily: "Quicksand" }}>{post.title}</h3>
             </Link>
           </div>
         </div>
@@ -65,7 +57,6 @@ const MainPage = ({ posts }) => {
 };
 
 export default MainPage;
-
 
 
 

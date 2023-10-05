@@ -108,11 +108,11 @@ const SignUpPage = () => {
 
         <input
           type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}
-          style={{ fontSize: "14px", padding: "8px", width: "50%" }}/>
+          style={{ fontSize: "14px", padding: "8px", width: "100%" }}/>
         
         <input
           type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}
-          style={{ fontSize: "14px", padding: "8px", width: "50%" }}/>
+          style={{ fontSize: "14px", padding: "8px", width: "100%" }}/>
         
         <button
           style={{ fontSize: "16px", padding: "10px", marginTop: "10px" }}>
