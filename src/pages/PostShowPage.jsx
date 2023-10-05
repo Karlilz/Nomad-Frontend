@@ -80,7 +80,6 @@ const PostShowPage = ({ posts, currentUser }) => {
 
   const selectedPost = posts[index];
 
-  // Check if the current user is the author of the post
   const isCurrentUserAuthor = currentUser && currentUser.id === selectedPost.userId;
 
   return (

@@ -49,7 +49,7 @@ import { useNavigate, Link } from 'react-router-dom';
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate(); 
 
   async function login(e) {
     e.preventDefault();
@@ -60,7 +60,7 @@ const LoginPage = () => {
       credentials: 'include',
     });
     if (response.ok) {
-      navigate('/nomad'); // Redirect to /nomad on successful login
+      navigate('/nomad'); 
     } else {
       alert('Wrong password');
     }
