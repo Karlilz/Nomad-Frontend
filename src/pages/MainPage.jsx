@@ -38,7 +38,7 @@ const MainPage = ({ posts }) => {
   return (
     <div>
       <Nav />
-      {posts.map((post, index) => (
+      {posts?.map((post, index) => (
         <div key={index} className="post-container">
           <div className="image-container">
             <Link to={`/posts/${index}`}>

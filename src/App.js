@@ -11,13 +11,14 @@ import PostShowPage from './pages/PostShowPage';
 import CreatePost from  './pages/CreatePost'
 import WelcomePage from './pages/WelcomePage';
 import ProfilePage from './pages/ProfilePage';
-import { showLoader } from "./loaders"
+import { showLoader} from "./loaders"
 import UpdatePost from './pages/UpdatePost';
 import AboutPage from './pages/AboutPage';
+import { useEffect, useState } from 'react';
 
 
 function App() {
-  const posts = [
+  const seedData = [
     {title: 'Exploring the Stunning Beaches of Bali', username: 'Traveler123', location: 'Bali, Indonesia', image: 'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmFsaSUyMGJlYWNofGVufDB8fDB8fHww&w=1000&q=80', caption: 'Golden sands and crystal clear waters at the beautiful beaches in Bali.'},
     {title: "A Trip to the Enchanting Santorini",username: "WanderlustElla", location: "Santorini, Greece", image: "https://www.strogilisantorini.com/blog/user/pages/01.home/20.10-best-santorini-blue-domes-churches/santorini-blue-domes.jpg", caption: "Sunset over the iconic blue-domed churches in Santorini."},
     {title: "Hiking Adventures in the Swiss Alps", username: "MountainExplorer", location: "Swiss Alps, Switzerland", image: "https://images.squarespace-cdn.com/content/v1/5c4645722714e56a73cc0554/1612894701051-RAWXKRH78H1219CI83FU/Berner+Oberland+Swiss+Alps+Hiking.jpg", caption: "Majestic views from the trails of the Swiss Alps."},
@@ -42,6 +43,19 @@ function App() {
     {title: "Cruising the Amazon River", username: "AmazonExplorer", location: "Amazon Rainforest, Brazil", image: "https://www.aquaexpeditions.com/wp-content/uploads/2018/11/skiffs.jpg", caption: "Navigating the meandering waters of the Amazon River."}
   ];
 
+  const URL="https://nomad-vt3u.onrender.com"
+
+  const [posts, setPost] = useState ([]) 
+  useEffect (() => {
+    const loadData = async () => {
+    const response = await fetch(URL+'/post')
+    const travelblog = await response.json()
+    console.log(travelblog); 
+    setPost ([...travelblog, ...seedData])
+  }
+  loadData()
+  }, [])
+
   return (
     <Routes>
       {/* <Route path="/" element={<Nav />} /> */}
@@ -49,7 +63,7 @@ function App() {
       {/* <Route path="/nomad" element={<WelcomePage />} /> */}
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignUpPage />} />
-      <Route path="/nomad" element={<MainPage posts={posts} Nav={Nav} />} />
+      <Route path="/nomad" element={<MainPage Nav={Nav} posts={posts} />} />
       <Route path="/posts/:index" element={<PostShowPage posts={posts} Header={Header} />} />
       <Route path="/nomad/create" element={<CreatePost />} />
       <Route path="/nomad/profile" element={<ProfilePage />} />

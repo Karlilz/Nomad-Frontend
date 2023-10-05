@@ -2,7 +2,7 @@ const URL="https://nomad-vt3u.onrender.com"
 
 // TRAVEL BLOG LOADER
 export const travelBlogLoader = async () => {
-  const response = await fetch(URL+'/travelblog')
+  const response = await fetch(URL+'/post')
   const travelblog = await response.json()
   console.log(travelblog); 
   return travelblog
@@ -15,3 +15,4 @@ export const showLoader = async ({params}) => {
     console.log(travelblog); 
     return travelblog;
   }
+
