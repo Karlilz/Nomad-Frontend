@@ -46,20 +46,22 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
-const LoginPage = () => {
+const LoginPage = ({setUser}) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate(); 
 
   async function login(e) {
     e.preventDefault();
-    const response = await fetch('http://localhost:3000/login', {
+    const response = await fetch('https://nomad-vt3u.onrender.com/login', {
       method: 'POST',
       body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
     });
     if (response.ok) {
+      const user = await response.json()
+      setUser (user)
       navigate('/nomad'); 
     } else {
       alert('Wrong password');

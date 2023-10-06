@@ -15,6 +15,8 @@ import { showLoader} from "./loaders"
 import UpdatePost from './pages/UpdatePost';
 import AboutPage from './pages/AboutPage';
 import { useEffect, useState } from 'react';
+import AuthenticatorRoute from './components/AuthenticatorRoute';
+import PostEditPage from './pages/PostEditPage';
 
 
 function App() {
@@ -45,6 +47,8 @@ function App() {
 
   const URL="https://nomad-vt3u.onrender.com"
 
+  const [user, setUser] = useState(null);
+
   const [posts, setPost] = useState ([]) 
   useEffect (() => {
     const loadData = async () => {
@@ -61,14 +65,14 @@ function App() {
       {/* <Route path="/" element={<Nav />} /> */}
       <Route path="/" element={<WelcomePage />} />
       {/* <Route path="/nomad" element={<WelcomePage />} /> */}
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/login" element={<LoginPage setUser={setUser}/>} />
       <Route path="/signup" element={<SignUpPage />} />
-      <Route path="/nomad" element={<MainPage Nav={Nav} posts={posts} />} />
-      <Route path="/posts/:index" element={<PostShowPage posts={posts} Header={Header} />} />
-      <Route path="/nomad/create" element={<CreatePost />} />
-      <Route path="/nomad/profile" element={<ProfilePage />} />
-      <Route path=":id/edit" element={<UpdatePost/>} loader={showLoader}/>
-      <Route path="/nomad/about" component={AboutPage} />
+      <Route path="/nomad" element={<AuthenticatorRoute user={user}> <MainPage Nav={Nav} user={user} setUser={setUser} posts={posts} /> </AuthenticatorRoute>} />
+      <Route path="/posts/:index" element={<PostShowPage user={user} setUser={setUser} posts={posts} Header={Header} />} />
+      <Route path="/nomad/create" element={<CreatePost user={user} setPost={setPost} posts={posts} />} />
+      <Route path="/nomad/profile" element={<AuthenticatorRoute user={user}> <ProfilePage posts={posts} user={user}/> </AuthenticatorRoute>} />
+      <Route path="posts/:id/edit" element={<PostEditPage posts={posts}/>} loader={showLoader}/>
+      <Route path="/nomad/about" element={<AboutPage/>} />
     </Routes>
   );
 }

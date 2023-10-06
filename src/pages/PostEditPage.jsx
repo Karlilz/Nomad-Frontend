@@ -1,22 +1,19 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-const PostEditPage = ({ post }) => {
-  const [formData, setFormData] = useState({
-    title: post.title,
-    image: post.image,
-    caption: post.caption,
-    location: post.location,
-  });
 
+const PostEditPage = ({ posts }) => {
+  const {id} = useParams ()
+  const post = posts?.find((post) => post?._id === id);
+  const [formData, setFormData] = useState(post);
+
+  console.log(post)
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({...formData,[name]: value,});
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle the form submission, e.g., send the updated data to your server
-    // You can use an API call or other methods to update the post
   };
 
   return (

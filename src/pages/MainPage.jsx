@@ -34,10 +34,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
 
-const MainPage = ({ posts }) => {
+const MainPage = ({ posts, user, setUser }) => {
   return (
     <div>
-      <Nav />
+      <Nav user ={user} setUser = {setUser} />
       {posts?.map((post, index) => (
         <div key={index} className="post-container">
           <div className="image-container">

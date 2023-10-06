@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
 
-const CreatePost = () => {
+const CreatePost = ({user, setAllPosts, posts}) => {
   const [post, setPost] = useState({
     title: '',
     location: '',
     image: '',
     caption: '',
+    username: user.username
   });
 
   const history = useNavigate();
@@ -27,6 +28,8 @@ const CreatePost = () => {
       });
       if (response.ok) {
         console.log(response)
+        const post = await response.json()
+        setAllPosts ([...posts, post])
       } else {
       }
     } catch (error) {
@@ -41,6 +44,7 @@ const CreatePost = () => {
       location: '',
       image: '',
       caption: '',
+      username: user.username
     });
     history('/nomad'); 
   };
@@ -56,10 +60,10 @@ const CreatePost = () => {
           <input type="text" id="title" name="title" value={post.title} onChange={handleChange}/>
         </div>
 
-         <div>
+         {/* <div>
           <label style={{ fontFamily: "Quicksand", fontSize: "20px" }} htmlFor="username"><b>Username:</b></label>
-          <input type="text" id="username" name="username" value={post.username} onChange={handleChange}/>
-        </div>
+          <input type="text" id="username" name="username" value={user.username} onChange={handleChange}/>
+        </div> */}
        
         <div>
           <label style={{ fontFamily: "Quicksand", fontSize: "20px" }} htmlFor="location"><b>Location:</b></label>

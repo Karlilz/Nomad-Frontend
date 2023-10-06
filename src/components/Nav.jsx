@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
  const Nav = (props) => {
 return (
     <div>
-        <Header/>
+        <Header user ={props.user} setUser = {props.setUser}/>
         <Outlet />
     </div>
   );

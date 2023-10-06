@@ -1,37 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const Header = () => {
-  const [username, setUsername] = useState(null);
+const Header = ({user, setUser}) => {
 
   useEffect(() => {
-    fetch('http://localhost:3000/profile', {
+    fetch('https://nomad-vt3u.onrender.com/profile', {
       credentials: 'include',
     }).then((response) => {
       response.json().then((userInfo) => {
-        setUsername(userInfo.username);
+        setUser(userInfo);
       });
     });
   }, []);
 
   function logout() {
-    fetch('http://localhost:3000/logout', {
+    fetch('https://nomad-vt3u.onrender.com/logout', {
       credentials: 'include',
       method: 'POST',
     });
-    setUsername(null);
+    setUser(null);
   }
 
   return (
     <header>
       <h1 style={{fontSize:"65px", fontFamily:"Pacifico"}}>Nom@d</h1>
       <nav>
-        {username ? (
+        {user ? (
           <>
-            <Link to="/nomad/about" className="header-button">
-              <b>About</b>
-            </Link>
-
             <Link to="/nomad/create" className="header-button">
               <b>Create Post</b>
             </Link>
@@ -46,6 +41,10 @@ const Header = () => {
           </>
         ) : (
           <>
+            <Link to="/nomad/about" className="header-button">
+              <b>About</b>
+            </Link>
+
             <Link to="/nomad/create" className="header-button">
               <b>Create Post</b>
             </Link>
