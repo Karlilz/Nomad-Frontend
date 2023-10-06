@@ -12,11 +12,12 @@ import CreatePost from  './pages/CreatePost'
 import WelcomePage from './pages/WelcomePage';
 import ProfilePage from './pages/ProfilePage';
 import { showLoader} from "./loaders"
-import UpdatePost from './pages/UpdatePost';
+// import UpdatePost from './pages/UpdatePost';
 import AboutPage from './pages/AboutPage';
 import { useEffect, useState } from 'react';
 import AuthenticatorRoute from './components/AuthenticatorRoute';
 import PostEditPage from './pages/PostEditPage';
+// import { deleteAction } from './action';
 
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
       <Route path="/nomad/profile" element={<AuthenticatorRoute user={user}> <ProfilePage posts={posts} user={user}/> </AuthenticatorRoute>} />
       <Route path="posts/:id/edit" element={<PostEditPage posts={posts}/>} loader={showLoader}/>
       <Route path="/nomad/about" element={<AboutPage/>} />
+      {/* <Route path="/nomad/delete/:id" action={deleteAction}  /> */}
     </Routes>
   );
 }

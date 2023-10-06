@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = ({user, setUser}) => {
-
+  
   useEffect(() => {
     fetch('https://nomad-vt3u.onrender.com/profile', {
       credentials: 'include',
@@ -13,6 +13,17 @@ const Header = ({user, setUser}) => {
     });
   }, []);
 
+  // FOR MISSING SET DEPENDENCY?
+  // useEffect(() => {
+  //   fetch('https://nomad-vt3u.onrender.com/profile', {
+  //     credentials: 'include',
+  //   }).then((response) => {
+  //     response.json().then((userInfo) => {
+  //       setUser(userInfo);
+  //     });
+  //   }, [setUser]); // Add setUser to the dependency array
+  // }, []);
+  
   function logout() {
     fetch('https://nomad-vt3u.onrender.com/logout', {
       credentials: 'include',
@@ -27,6 +38,10 @@ const Header = ({user, setUser}) => {
       <nav>
         {user ? (
           <>
+            {/* <Link to="/nomad/about" className="header-button">
+              <b>About</b>
+            </Link> */}
+
             <Link to="/nomad/create" className="header-button">
               <b style={{fontFamily:"Quicksand"}}>Create Post</b>
             </Link>

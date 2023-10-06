@@ -18,25 +18,25 @@ const PostEditPage = ({ posts }) => {
 
   return (
     <div>
-      <h2>Edit Post</h2>
+      <h2 style={{fontFamily:"Pacifico", fontSize:"40px"}}>Edit Nom@d Post</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="title">Title:</label>
+          <label style={{fontFamily:"Quicksand"}} htmlFor="title"><b>Title:</b></label>
           <input type="text" id="title" name="title" value={formData.title} onChange={handleChange}/>
         </div>
 
         <div>
-          <label htmlFor="image">Image URL:</label>
+          <label style={{fontFamily:"Quicksand"}} htmlFor="image"><b>Image URL:</b></label>
           <input type="text" id="image"name="image" value={formData.image} onChange={handleChange}/>
         </div>
 
         <div>
-          <label htmlFor="caption">Caption:</label>
+          <label style={{fontFamily:"Quicksand"}} htmlFor="caption"><b>Caption:</b></label>
           <textarea id="caption"name="caption" value={formData.caption} onChange={handleChange}/>
         </div>
 
         <div>
-          <label htmlFor="location">Location:</label>
+          <label style={{fontFamily:"Quicksand"}} htmlFor="location"><b>Location:</b></label>
           <input type="text"id="location" name="location" value={formData.location} onChange={handleChange}/>
         </div>
 

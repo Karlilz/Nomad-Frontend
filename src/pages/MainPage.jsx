@@ -58,11 +58,13 @@ const MainPage = ({ posts, user, setUser }) => {
                 <img src={post.image} alt={post.title} className="post-image" />
               </Link>
             </div>
+
             <div className="post-details">
               <Link to={`/posts/${index}`} style={{ textDecoration: 'none' }}>
                 <h3 style={{ fontSize: '30px', color: 'black', fontFamily: "Quicksand" }}>{post.title}</h3>
               </Link>
             </div>
+            
           </div>
         ))
       )}

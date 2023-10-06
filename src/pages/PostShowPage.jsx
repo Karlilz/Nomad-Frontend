@@ -12,24 +12,24 @@ const PostShowPage = ({ posts, user, setUser }) => {
   const selectedPost = posts.find(post => post._id = index);
   console.log(selectedPost)
 
-  const isCurrentUserAuthor = user && user.id === selectedPost.userId;
+  // const isCurrentUserAuthor = user && user.id === selectedPost.userId;
 
   return (
     <div className="center">
       <h2 style={{fontFamily:"Quicksand"}}>{selectedPost.title}</h2>
       <img src={selectedPost.image} alt={selectedPost.title} className="small-image" />
-      <p style={{fontFamily:"Quicksand"}}><b>Username:</b> {selectedPost.username}</p>
-      <p style={{fontFamily:"Quicksand"}}><b>Location:</b> {selectedPost.location}</p>
-      <p style={{fontFamily:"Quicksand"}}>{selectedPost.caption}</p>
+      <p style={{fontFamily:"Quicksand", fontSize:"18px"}}><b>Username:</b> {selectedPost.username}</p>
+      <p style={{fontFamily:"Quicksand", fontSize:"18px"}}><b>@:</b> {selectedPost.location}</p>
+      <p style={{fontFamily:"Quicksand", fontSize:"16px"}}>{selectedPost.caption}</p>
 
-      {isCurrentUserAuthor && (
+      {/* {isCurrentUserAuthor && (
         <Link to={`/posts/${index}/edit`}>
           <button className="page-button">Edit</button>
         </Link>
-      )}
+      )} */}
 
       <Link to="/nomad">
-        <button className="page-button">Back</button>
+        <button className="page-button">Back to Home</button>
       </Link>
     </div>
   );

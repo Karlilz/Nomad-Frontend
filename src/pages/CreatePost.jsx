@@ -76,13 +76,13 @@ const CreatePost = ({user, setAllPosts, posts}) => {
         </div>
 
         <div>
-          <label style={{ fontFamily: "Quicksand", fontSize: "20px" }} htmlFor="caption"><b>Caption:</b></label>
+          <label style={{fontFamily: "Quicksand", fontSize: "20px" }} htmlFor="caption"><b>Caption:</b></label>
           <textarea id="caption" name="caption" value={post.caption} onChange={handleChange} style={{ width: '100%', padding: '5px 7px', border: '2px solid #ddd', borderRadius: '5px', backgroundColor: '#eee' }}/>
         </div>
 
         <button type="submit" className="page-button">Upload Blog Post</button> 
 
-        <button {{fontFamily:"Quicksand"}}>
+        <button style={{fontFamily:"Quicksand"}}>
         <Link className="page-button" to="/nomad"> Back to Home</Link>
         </button>
 
