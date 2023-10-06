@@ -70,6 +70,7 @@ const ProfilePage = ({ user, posts, onDeletePost }) => {
               </td>
               <td>
                 <button onClick={() => handleDeletePost(post._id)}>Delete</button>
+                {/* METHOD DELETE */}
               </td>
             </tr>
           ))}

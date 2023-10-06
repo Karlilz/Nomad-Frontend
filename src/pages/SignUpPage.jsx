@@ -83,7 +83,7 @@ const SignUpPage = () => {
 
   async function signUp(e) {
     e.preventDefault();
-    const response = await fetch('https://nomad-vt3u.onrender.com/signup', {
+    const response = await fetch('https://nomad-vt3u.onrender.com', {
       method: 'POST',
       body: JSON.stringify({ username, password }),
       headers: { 'Content-Type': 'application/json' },
