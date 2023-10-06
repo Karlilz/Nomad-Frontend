@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 
 const PostEditPage = ({ posts }) => {
@@ -40,7 +40,16 @@ const PostEditPage = ({ posts }) => {
           <input type="text"id="location" name="location" value={formData.location} onChange={handleChange}/>
         </div>
 
-        <button type="submit">Save</button>
+        <button className="page-button" type="submit">Save</button>
+
+        <button>
+        <Link className="page-button" to="/nomad/profile"> Back to Profile </Link>
+        </button>
+
+        <button>
+        <Link className="page-button" to="/nomad"> Back to Home</Link>
+        </button>
+
       </form>
     </div>
   );
