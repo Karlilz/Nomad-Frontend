@@ -82,7 +82,7 @@ const CreatePost = ({user, setAllPosts, posts}) => {
 
         <button type="submit" className="page-button">Upload Blog Post</button> 
 
-        <button>
+        <button {{fontFamily:"Quicksand"}}>
         <Link className="page-button" to="/nomad"> Back to Home</Link>
         </button>
 

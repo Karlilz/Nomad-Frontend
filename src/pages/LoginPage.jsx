@@ -29,8 +29,8 @@ const LoginPage = ({setUser}) => {
         <h1 style={{ fontFamily: "Pacifico", fontSize: "40px" }}>Login to Nom@d!</h1>
         <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} style={{ fontSize: "14px", padding: "8px", width: "100%" }}/>
         <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} style={{ fontSize: "14px", padding: "8px", width: "100%" }}/>
-        <button>Login</button>
-        <button>
+        <button style={{fontFamily:"Quicksand"}}>Login</button>
+        <button style={{fontFamily:"Quicksand"}}>
           <Link to="/">Back</Link>
         </button>
       </form>

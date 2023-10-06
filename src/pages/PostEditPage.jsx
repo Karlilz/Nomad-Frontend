@@ -40,13 +40,13 @@ const PostEditPage = ({ posts }) => {
           <input type="text"id="location" name="location" value={formData.location} onChange={handleChange}/>
         </div>
 
-        <button className="page-button" type="submit">Save</button>
+        <button style={{fontFamily:"Quicksand"}} className="page-button" type="submit">Save</button>
 
-        <button>
+        <button style={{fontFamily:"Quicksand"}}>
         <Link className="page-button" to="/nomad/profile"> Back to Profile </Link>
         </button>
 
-        <button>
+        <button style={{fontFamily:"Quicksand"}}>
         <Link className="page-button" to="/nomad"> Back to Home</Link>
         </button>
 
