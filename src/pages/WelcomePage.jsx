@@ -50,14 +50,14 @@ const WelcomePage = () => {
 
   const welcomePageStyle = {
     backgroundImage: 'url("images/Nomad-Background1.png")',
-    backgroundSize: '100% 100%', // Stretch the image to fill the entire page
+    backgroundSize: '100% 100%', 
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center center',
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'flex-start', // Adjust this property to 'flex-start' to align content to the top
+    justifyContent: 'flex-start', 
   };
 
   return (
@@ -73,12 +73,12 @@ const WelcomePage = () => {
         <div className="welcome-buttons">
           <p style={{ fontFamily: "Quicksand", fontSize: "18px", color:"black", fontStyle: "italic" }}>
             <b>New User ?</b>
-            <Link to="/signup" className="welcome-button">Sign Up</Link>
+            <Link to="/signup" style={{color:"white"}} className="welcome-button">Sign Up</Link>
           </p>
 
           <p style={{ fontFamily: "Quicksand", fontSize: "18px", color:"black", fontStyle: "italic" }}>
             <b>Already Have an Account ?</b>{' '}
-            <Link to="/login" className="welcome-button">Login</Link>
+            <Link to="/login" style={{color:"white"}} className="welcome-button">Login</Link>
           </p>
         </div>
       )}

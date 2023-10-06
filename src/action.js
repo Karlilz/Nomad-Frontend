@@ -1,6 +1,8 @@
 import { redirect } from "react-router-dom";
 
-const URL = "https://nomad-vt3u.onrender.com"
+// const URL = "https://nomad-vt3u.onrender.com"
+const URL = "http://localhost:4000"
+
 
 
 // CREATE ACTION 

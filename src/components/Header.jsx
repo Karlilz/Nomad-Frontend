@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 const Header = ({user, setUser}) => {
   
   useEffect(() => {
-    fetch('https://nomad-vt3u.onrender.com/profile', {
+    fetch('http://localhost:4000/profile', {
+    // fetch('https://nomad-vt3u.onrender.com/profile', {
       credentials: 'include',
     }).then((response) => {
       response.json().then((userInfo) => {
@@ -25,7 +26,8 @@ const Header = ({user, setUser}) => {
   // }, []);
   
   function logout() {
-    fetch('https://nomad-vt3u.onrender.com/logout', {
+    fetch('http://localhost:4000/logout', {
+    // fetch('https://nomad-vt3u.onrender.com/logout', {
       credentials: 'include',
       method: 'POST',
     });
