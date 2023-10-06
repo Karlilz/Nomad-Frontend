@@ -11,15 +11,15 @@ const LoginPage = ({ setUser }) => {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'flex-start', // Adjust this property to 'flex-start' to align content to the top
+    justifyContent: 'flex-start', 
   };
 
   const backgroundImageStyle = {
     backgroundImage: 'url("images/Nomad-Background3.png")',
-    backgroundSize: '100% 100%', // Stretch the image to fill the entire page
+    backgroundSize: '100% 100%', 
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center center',
-    opacity: 0.8, // Set the opacity to 80%
+    opacity: 0.8, 
     position: 'absolute',
     top: 0,
     left: 0,

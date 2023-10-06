@@ -15,4 +15,3 @@ export const showLoader = async ({params}) => {
     console.log(travelblog); 
     return travelblog;
   }
-
