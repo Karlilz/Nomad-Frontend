@@ -80,10 +80,10 @@ const CreatePost = ({user, setAllPosts, posts}) => {
           <textarea id="caption" name="caption" value={post.caption} onChange={handleChange} style={{ width: '100%', padding: '5px 7px', border: '2px solid #ddd', borderRadius: '5px', backgroundColor: '#eee' }}/>
         </div>
 
-        <button type="submit" className="comment-button">Upload Blog Post</button> 
+        <button type="submit" className="page-button">Upload Blog Post</button> 
 
-        <button className="back-button">
-          <Link to="/nomad">Back</Link>
+        <button>
+        <Link className="page-button" to="/nomad"> Back to Home</Link>
         </button>
 
       </form>
