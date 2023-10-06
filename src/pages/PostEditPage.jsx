@@ -12,8 +12,16 @@ const PostEditPage = ({ posts }) => {
     const { name, value } = e.target;
     setFormData({...formData,[name]: value,});
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+    // e.preventDefault();
+    // DO I NEED AN UNDERSCORE
+    const response = await fetch('http://localhost:4000/update/' + post._id, {
+        method: 'POST',
+        // INCLUDE DATA WE WANT TO UPDATE
+        body: post,
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+      });
   };
 
   return (

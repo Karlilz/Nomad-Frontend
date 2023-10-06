@@ -47,11 +47,15 @@
 import React from 'react';
 import { Link} from 'react-router-dom';
 
-const ProfilePage = ({ user, posts, onDeletePost }) => {
+const ProfilePage = ({ user, posts}) => {
   const userPosts = posts?.filter((post) => post?.username === user?.username);
 
-  const handleDeletePost = (postId) => {
-    onDeletePost(postId);
+  const handleDeletePost = async (postId) => {
+    const response = await fetch('http://localhost:4000/' + postId, {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+      });
   };
 
   return (
@@ -70,7 +74,6 @@ const ProfilePage = ({ user, posts, onDeletePost }) => {
               </td>
               <td>
                 <button onClick={() => handleDeletePost(post._id)}>Delete</button>
-                {/* METHOD DELETE */}
               </td>
             </tr>
           ))}
