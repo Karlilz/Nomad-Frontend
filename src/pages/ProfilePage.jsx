@@ -11,15 +11,11 @@ const ProfilePage = ({ user, posts, onDeletePost }) => {
   return (
     <div>
       <h2 style={{ fontFamily: "Pacifico", fontSize: "40px" }}> {user?.username}'s Nom@d Blog Posts</h2>
-      {/* <p><b>Username:</b> {user?.username}</p>
-      <p><b>Password:</b> *****</p> */}
-
+      
       <table>
         <thead>
           <tr>
             <th style={{fontFamily:"Quicksand", fontSize:"18px"}}><u>Blog Title</u></th>
-            {/* <th style={{fontFamily:"Quicksand"}}><u>Edit Post</u></th>
-            <th style={{fontFamily:"Quicksand"}}><u>Delete Post</u></th> */}
           </tr>
         </thead>
         <tbody>

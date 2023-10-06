@@ -6,9 +6,7 @@ import LoginPage from './LoginPage';
 const WelcomePage = () => {
   const [showSignUp] = useState(false);
   const [showLogin] = useState(false);
-  // const [showSignUp, setShowSignUp] = useState(false);
-  // const [showLogin, setShowLogin] = useState(false);
-
+ 
   return (
     <div className="welcome-container">
       <h1 style={{fontFamily:"Pacifico", fontSize:"75px"}} className="welcome-title">Nom@d</h1>
