@@ -52,8 +52,8 @@ const LoginPage = ({ setUser }) => {
         <h1 style={{ fontFamily: "Pacifico", fontSize: "40px" }}>Login to Nom@d!</h1>
         <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} style={{ fontSize: "14px", padding: "8px", width: "100%" }} />
         <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} style={{ fontSize: "14px", padding: "8px", width: "100%" }} />
-        <button style={{ fontSize: "16px", padding: "10px", marginTop: "10px" }}>Login</button>
-        <button style={{ fontSize: "16px", padding: "10px", marginTop: "10px" }}>
+        <button style={{ fontSize: "16px", padding: "10px", marginTop: "10px", cursor: "pointer" }}>Login</button>
+        <button style={{ fontSize: "16px", padding: "10px", marginTop: "10px", cursor: "pointer" }}>
           <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>Back</Link>
         </button>
       </form>

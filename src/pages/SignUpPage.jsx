@@ -64,12 +64,12 @@ const SignUpPage = () => {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'flex-start', // Adjust this property to 'flex-start' to align content to the top
+    justifyContent: 'flex-start', 
   };
 
   const backgroundImageStyle = {
-    backgroundImage: 'url("images/Nomad-Background4.jpg")', 
-    backgroundSize: '100% 100%', // Stretch the image to fill the entire page
+    backgroundImage: 'url("images/Nomad-Background4.png")', 
+    backgroundSize: '100% 100%', 
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center center',
     opacity: 0.8, 
@@ -100,7 +100,7 @@ const SignUpPage = () => {
     <div style={signUpPageStyle}>
       <div style={backgroundImageStyle}></div>
       <form className="login signUp" onSubmit={signUp}>
-        <h1 style={{ fontFamily: "Pacifico", fontSize: "35px" }}>Create a Nom@d Account</h1>
+        <h1 style={{ fontFamily: "Pacifico", fontSize: "40px", whiteSpace: 'nowrap'  }}>Create a Nom@d Account</h1>
 
         <input
           type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}
@@ -111,11 +111,11 @@ const SignUpPage = () => {
           style={{ fontSize: "14px", padding: "8px", width: "100%" }}/>
         
         <button
-          style={{ fontSize: "16px", padding: "10px", marginTop: "10px" }}>
+          style={{ fontSize: "16px", padding: "10px", marginTop: "10px", cursor: "pointer"  }}>
           Sign Up
         </button>
         
-        <button style={{ fontSize: "16px", padding: "10px", marginTop: "10px" }}>
+        <button style={{ fontSize: "16px", padding: "10px", marginTop: "10px", cursor: "pointer"  }}>
           <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>Back</Link>
         </button>
       </form>
