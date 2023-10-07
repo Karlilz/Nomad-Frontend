@@ -20,12 +20,6 @@ const PostShowPage = ({ posts, user, setUser }) => {
       <p style={{fontFamily:"Quicksand", fontSize:"18px"}}><b>@:</b> {selectedPost.location}</p>
       <p style={{fontFamily:"Quicksand", fontSize:"16px"}}>{selectedPost.caption}</p>
 
-      {/* {isCurrentUserAuthor && (
-        <Link to={`/posts/${index}/edit`}>
-          <button className="page-button">Edit</button>
-        </Link>
-      )} */}
-
       <Link to="/nomad">
         <button className="page-button">Back to Home</button>
       </Link>

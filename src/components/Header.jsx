@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const Header = ({user, setUser}) => {
   
   useEffect(() => {
-    fetch('http://localhost:4000/profile', {
-    // fetch('https://nomad-vt3u.onrender.com/profile', {
+    // fetch('http://localhost:4000/profile', {
+    fetch('https://nomad-vt3u.onrender.com/profile', {
       credentials: 'include',
     }).then((response) => {
       response.json().then((userInfo) => {
@@ -13,21 +13,10 @@ const Header = ({user, setUser}) => {
       });
     });
   }, []);
-
-  // FOR MISSING SET DEPENDENCY?
-  // useEffect(() => {
-  //   fetch('https://nomad-vt3u.onrender.com/profile', {
-  //     credentials: 'include',
-  //   }).then((response) => {
-  //     response.json().then((userInfo) => {
-  //       setUser(userInfo);
-  //     });
-  //   }, [setUser]); // Add setUser to the dependency array
-  // }, []);
   
   function logout() {
-    fetch('http://localhost:4000/logout', {
-    // fetch('https://nomad-vt3u.onrender.com/logout', {
+    // fetch('http://localhost:4000/logout', {
+    fetch('https://nomad-vt3u.onrender.com/logout', {
       credentials: 'include',
       method: 'POST',
     });
@@ -40,9 +29,9 @@ const Header = ({user, setUser}) => {
       <nav>
         {user ? (
           <>
-            {/* <Link to="/nomad/about" className="header-button">
+            <Link to="/nomad/about" className="header-button">
               <b>About</b>
-            </Link> */}
+            </Link>
 
             <Link to="/nomad/create" className="header-button">
               <b style={{fontFamily:"Quicksand", cursor: "pointer"}}>Create Post</b>

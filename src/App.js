@@ -46,8 +46,8 @@ function App() {
     {title: "Cruising the Amazon River", username: "AmazonExplorer", location: "Amazon Rainforest, Brazil", image: "https://www.aquaexpeditions.com/wp-content/uploads/2018/11/skiffs.jpg", caption: "Navigating the meandering waters of the Amazon River."}
   ];
 
-  // const URL="https://nomad-vt3u.onrender.com"
-  const URL="http://localhost:4000"
+  const URL="https://nomad-vt3u.onrender.com"
+  // const URL="http://localhost:4000"
 
   const deletePost = pId => { 
     const foundPost = posts?.filter((post) => post._id !== pId);

@@ -1,5 +1,5 @@
-// const URL="https://nomad-vt3u.onrender.com"
-const URL ="ttp://localhost:4000"
+const URL="https://nomad-vt3u.onrender.com"
+// const URL ="ttp://localhost:4000"
 
 // TRAVEL BLOG LOADER
 export const travelBlogLoader = async () => {
