@@ -29,37 +29,37 @@ const Header = ({user, setUser}) => {
       <nav>
         {user ? (
           <>
-            <Link to="/nomad/about" className="header-button">
+            <Link to="/nomad/about" style={{fontFamily:"Quicksand", cursor: "pointer", fontSize:"16px"}} className="header-button">
               <b>About</b>
             </Link>
 
-            <Link to="/nomad/create" className="header-button">
+            <Link to="/nomad/create" style={{fontFamily:"Quicksand", cursor: "pointer", fontSize:"16px"}} className="header-button">
               <b style={{fontFamily:"Quicksand", cursor: "pointer"}}>Create Post</b>
             </Link>
 
-            <Link to="/nomad/profile" className="header-button">
+            <Link to="/nomad/profile" style={{fontFamily:"Quicksand", cursor: "pointer", fontSize:"16px"}} className="header-button">
               <b style={{fontFamily:"Quicksand", cursor: "pointer"}}>Profile</b>
             </Link>
 
-            <button onClick={logout} className="header-button">
+            <button onClick={logout} style={{fontFamily:"Quicksand", cursor: "pointer", fontSize:"16px"}} className="header-button">
               <b style={{fontFamily:"Quicksand", cursor: "pointer"}}>Logout</b>
             </button>
           </>
         ) : (
           <>
-            <Link to="/nomad/about" className="header-button">
+            <Link to="/nomad/about" style={{fontFamily:"Quicksand", cursor: "pointer", fontSize:"16px"}} className="header-button">
               <b>About</b>
             </Link>
 
-            <Link to="/nomad/create" className="header-button">
+            <Link to="/nomad/create" style={{fontFamily:"Quicksand", cursor: "pointer", fontSize:"16px"}} className="header-button">
               <b>Create Post</b>
             </Link>
 
-            <Link to="/nomad/profile" className="header-button">
+            <Link to="/nomad/profile" style={{fontFamily:"Quicksand", cursor: "pointer", fontSize:"16px"}} className="header-button">
               <b>Profile</b>
             </Link>
 
-            <button onClick={logout} className="header-button">
+            <button onClick={logout} style={{fontFamily:"Quicksand", cursor: "pointer", fontSize:"16px"}}className="header-button">
               <b>Logout</b>
             </button>
           </>

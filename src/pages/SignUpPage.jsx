@@ -48,7 +48,8 @@ const SignUpPage = () => {
     <div style={signUpPageStyle}>
       <div style={backgroundImageStyle}></div>
       <form className="login signUp" onSubmit={signUp}>
-        <h1 style={{ fontFamily: "Pacifico", fontSize: "40px", whiteSpace: 'nowrap'  }}>Create a Nom@d Account</h1>
+        <h1 style={{ fontFamily: "Pacifico", fontSize: "40px", whiteSpace: 'nowrap'}}>Welcome to Nom@d!</h1>
+        <h2 style={{ fontFamily: "Pacifico", fontSize: "35px", whiteSpace: 'nowrap' }}>Create an account</h2>
 
         <input
           type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}
