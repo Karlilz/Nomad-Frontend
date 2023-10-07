@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 
 
-const PostEditPage = ({ posts }) => {
+const PostEditPage = ({ posts,setPost }) => {
   const {id} = useParams ()
   const post = posts?.find((post) => post?._id === id);
   const [formData, setFormData] = useState(post);
+  const navigate = useNavigate ()
 
   console.log(post)
   const handleChange = (e) => {
@@ -13,15 +14,20 @@ const PostEditPage = ({ posts }) => {
     setFormData({...formData,[name]: value,});
   };
   const handleSubmit = async (e) => {
-    // e.preventDefault();
-    // DO I NEED AN UNDERSCORE
-    const response = await fetch('http://localhost:4000/update/' + post._id, {
-        method: 'POST',
-        // INCLUDE DATA WE WANT TO UPDATE
-        body: post,
+    e.preventDefault();
+    const response = await fetch('http://localhost:4000/post/' + post._id, {
+        method: 'PUT',
+        body: JSON.stringify(formData),
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
       });
+      if (response.ok) {
+        const data = await response.json()
+        const foundPost = posts?.filter((post) => post?._id !== id);
+        console.log(posts, foundPost, data)
+        setPost ([data,...foundPost])
+        navigate('/nomad/profile')
+      }
   };
 
   return (

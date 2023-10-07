@@ -49,6 +49,12 @@ function App() {
   // const URL="https://nomad-vt3u.onrender.com"
   const URL="http://localhost:4000"
 
+  const deletePost = pId => { 
+    const foundPost = posts?.filter((post) => post._id !== pId);
+    console.log(posts)
+    setPost ([...foundPost])
+  }
+
   const [user, setUser] = useState(null);
 
   const [posts, setPost] = useState ([]) 
@@ -72,8 +78,8 @@ function App() {
       <Route path="/nomad" element={<AuthenticatorRoute user={user}> <MainPage Nav={Nav} user={user} setUser={setUser} posts={posts} /> </AuthenticatorRoute>} />
       <Route path="/posts/:index" element={<PostShowPage user={user} setUser={setUser} posts={posts} Header={Header} />} />
       <Route path="/nomad/create" element={<CreatePost user={user} setPost={setPost} posts={posts} />} />
-      <Route path="/nomad/profile" element={<AuthenticatorRoute user={user}> <ProfilePage posts={posts} user={user}/> </AuthenticatorRoute>} />
-      <Route path="posts/:id/edit" element={<PostEditPage posts={posts}/>} loader={showLoader}/>
+      <Route path="/nomad/profile" element={<AuthenticatorRoute user={user}> <ProfilePage posts={posts} user={user} deletePost={deletePost}/> </AuthenticatorRoute>} />
+      <Route path="posts/:id/edit" element={<PostEditPage setPost={setPost} posts={posts}/>} loader={showLoader}/>
       <Route path="/nomad/about" element={<AboutPage/>} />
       {/* <Route path="/nomad/delete/:id" action={deleteAction}  /> */}
     </Routes>

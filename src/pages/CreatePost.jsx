@@ -1,3 +1,4 @@
+// WORKING CODE
 import React, { useState } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
 
@@ -19,7 +20,7 @@ const CreatePost = ({user, setAllPosts, posts}) => {
 
   const sendPostRequest = async (post) => {
     try {
-      const response = await fetch('https://nomad-vt3u.onrender.com/post', {
+      const response = await fetch('http://localhost:4000/post', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -87,6 +88,11 @@ const CreatePost = ({user, setAllPosts, posts}) => {
 };
 
 export default CreatePost;
+
+
+
+
+
 
 
 

@@ -44,13 +44,13 @@ const MainPage = ({ posts, user, setUser }) => {
         filteredPosts.map((post, index) => (
           <div key={index} className="post-container">
             <div className="image-container">
-              <Link to={`/posts/${index}`}>
+              <Link to={`/posts/${post._id}`}>
                 <img src={post.image} alt={post.title} className="post-image" />
               </Link>
             </div>
 
             <div className="post-details">
-              <Link to={`/posts/${index}`} style={{ textDecoration: 'none' }}>
+              <Link to={`/posts/${post._id}`} style={{ textDecoration: 'none' }}>
                 <h3 style={{ fontSize: '30px', color: 'black', fontFamily: "Quicksand" }}>{post.title}</h3>
               </Link>
             </div>
