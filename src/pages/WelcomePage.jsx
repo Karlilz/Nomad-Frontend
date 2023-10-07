@@ -31,12 +31,12 @@ const WelcomePage = () => {
       ) : (
         <div className="welcome-buttons">
           <p style={{ fontFamily: "Quicksand", fontSize: "18px", color:"black", fontStyle: "italic" }}>
-            <b>New User ?</b>
+            {/* <b>New User ?</b> */}
             <Link to="/signup" style={{color:"white"}} className="welcome-button">Sign Up</Link>
           </p>
 
           <p style={{ fontFamily: "Quicksand", fontSize: "18px", color:"black", fontStyle: "italic" }}>
-            <b>Already Have an Account ?</b>{' '}
+            {/* <b>Already Have an Account ?</b>{' '} */}
             <Link to="/login" style={{color:"white"}} className="welcome-button">Login</Link>
           </p>
         </div>
