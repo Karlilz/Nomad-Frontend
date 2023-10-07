@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 
 const PostEditPage = ({ posts,setPost }) => {
@@ -56,12 +56,26 @@ const PostEditPage = ({ posts,setPost }) => {
 
         <button style={{fontFamily:"Quicksand"}} className="page-button" type="submit">Save</button>
 
-        <button style={{fontFamily:"Quicksand"}}>
+        {/* <button style={{fontFamily:"Quicksand"}}>
         <Link className="page-button" to="/nomad/profile"> Back to Profile </Link>
         </button>
 
         <button style={{fontFamily:"Quicksand"}}>
         <Link className="page-button" to="/nomad"> Back to Home</Link>
+        </button> */}
+
+        <button
+          style={{ fontFamily: "Quicksand", cursor: "pointer", textDecoration: "none", color: "white" }}
+          onClick={() => navigate('/nomad/profile')}
+          className="page-button">
+          Back to Profile
+        </button>
+
+        <button
+          style={{ fontFamily: "Quicksand", cursor: "pointer", textDecoration: "none", color: "white" }}
+          onClick={() => navigate('/nomad')}
+          className="page-button">
+          Back to Home
         </button>
 
       </form>
