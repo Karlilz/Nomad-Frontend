@@ -97,7 +97,7 @@ const ProfilePage = ({ user, posts, deletePost }) => {
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
     });
-    deletePost(id);
+    deletePost(postId);
     navigate('/nomad/profile', { replace: true });
   };
 

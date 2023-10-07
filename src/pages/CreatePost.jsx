@@ -1,4 +1,3 @@
-// WORKING CODE
 import React, { useState } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
 
@@ -30,7 +29,9 @@ const CreatePost = ({user, setAllPosts, posts}) => {
       if (response.ok) {
         console.log(response)
         const post = await response.json()
-        setAllPosts ([...posts, post])
+        console.log(post)
+        setAllPosts (post)
+        history('/nomad/profile')
       } else {
       }
     } catch (error) {

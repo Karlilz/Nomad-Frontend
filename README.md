@@ -33,16 +33,18 @@ Capture the essence of your journeys and curate a visual travel diary. Nom@d is 
 - As a user, I should be able to create a blog post.  
 - As a user, I should be able to edit a blog post.  
 - As a user, I should be able to delete a blog post.  
-- As a user, I should be able to add a comment to another users blog post.  
 - As a user, I should be able to filter blog posts by location. 
 ---
 ### Next Steps: Planned Future Enhancements 
-- 
+- As a user, I should be able to add a comment to another users blog post.  
+- As a user, I should be able to like another users blog post. 
+- Brin in a location API to be able to get more information on location. 
 
----
+
+<!-- ---
 ### App Screenshots
-- 
+-  -->
 
----
+<!-- ---
 ### Links
-- 
+-  -->

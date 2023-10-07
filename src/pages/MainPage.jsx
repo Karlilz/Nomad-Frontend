@@ -7,29 +7,16 @@ const MainPage = ({ posts, user, setUser }) => {
   const [filteredPosts, setFilteredPosts] = useState(posts);
 
   useEffect(() => {
-    const filtered = posts.filter(post =>
-      post.location.toLowerCase().includes(searchInput.toLowerCase())
-    );
+    const filtered = posts.filter(post =>{
+      console.log(post)
+      return post?.location.toLowerCase().includes(searchInput.toLowerCase())
+  });
 
     setFilteredPosts(filtered);
   }, [searchInput, posts]);
 
-  // const mainPageStyle = {
-  //   backgroundImage: 'url("images/Nomad-Background5.png")', 
-  //   backgroundSize: 'cover', // Adjust as needed (cover, contain, etc.)
-  //   backgroundRepeat: 'no-repeat',
-  //   backgroundPosition: 'center center',
-  //   minHeight: '100vh',
-  //   display: 'flex',
-  //   flexDirection: 'column',
-  //   alignItems: 'center',
-  //   justifyContent: 'flex-start',
-  //   opacity: 0.8, 
-  // };
-
   return (
     <div>
-    {/* <div style={mainPageStyle}> */}
       <Nav user={user} setUser={setUser} />
       <input
         type="text"
