@@ -45,15 +45,15 @@ const Header = ({user, setUser}) => {
             </Link> */}
 
             <Link to="/nomad/create" className="header-button">
-              <b style={{fontFamily:"Quicksand"}}>Create Post</b>
+              <b style={{fontFamily:"Quicksand", cursor: "pointer"}}>Create Post</b>
             </Link>
 
             <Link to="/nomad/profile" className="header-button">
-              <b style={{fontFamily:"Quicksand"}}>Profile</b>
+              <b style={{fontFamily:"Quicksand", cursor: "pointer"}}>Profile</b>
             </Link>
 
             <button onClick={logout} className="header-button">
-              <b style={{fontFamily:"Quicksand"}}>Logout</b>
+              <b style={{fontFamily:"Quicksand", cursor: "pointer"}}>Logout</b>
             </button>
           </>
         ) : (
