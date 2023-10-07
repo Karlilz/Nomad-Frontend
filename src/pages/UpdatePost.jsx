@@ -28,8 +28,6 @@
 
 //   const handleSubmit = (e) => {
 //     e.preventDefault();
-//     // Submit the updated formData to your server for post update
-//     // Replace this with your actual API request to update the post
 //     fetch(`/api/posts/${id}`, {
 //       method: 'PUT', 
 //       headers: {
@@ -40,7 +38,6 @@
 //       .then((response) => response.json())
 //       .then((data) => {
 //         console.log('Post updated successfully:', data);
-//         // Redirect or perform any desired actions after the update
 //       })
 //       .catch((error) => {
 //         console.error('Error updating post:', error);
