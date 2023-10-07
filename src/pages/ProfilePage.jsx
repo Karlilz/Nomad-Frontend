@@ -53,8 +53,8 @@
 // export default ProfilePage;
 
 // WITH NO BLOG POST MESSAGE
-import React, { useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import React, { useState} from 'react';
+import { Link, useNavigate, useParams} from 'react-router-dom';
 
 const ProfilePage = ({ user, posts, deletePost }) => {
   const userPosts = posts?.filter((post) => post?.username === user?.username);
@@ -91,16 +91,7 @@ const ProfilePage = ({ user, posts, deletePost }) => {
           </p>
           <button
             onClick={createPost}
-            style={{
-              fontSize: '16px',
-              padding: '10px',
-              marginTop: '10px',
-              cursor: 'pointer',
-              margin: '0 auto', // Center horizontally
-              display: 'block', // Make it a block-level element
-              width: '150px', // Set a specific width
-            }}
-          >
+            style={{fontSize: '16px', padding: '10px', marginTop: '10px',cursor: 'pointer', margin: '0 auto', display: 'block', width: '150px'}}>
             Create a Blog Post
           </button>
         </div>
@@ -116,12 +107,7 @@ const ProfilePage = ({ user, posts, deletePost }) => {
                   <button>
                     <Link
                       to={`/posts/${post._id}/edit`}
-                      style={{
-                        textDecoration: 'none',
-                        color: 'white',
-                        background: 'black',
-                      }}
-                    >
+                      style={{textDecoration: 'none', color: 'white', background: 'black'}}>
                       Edit
                     </Link>
                   </button>
@@ -135,23 +121,31 @@ const ProfilePage = ({ user, posts, deletePost }) => {
         </table>
       )}
 
-      <button
+      {/* <button
         style={{
           fontSize: '16px',
           padding: '10px',
           marginTop: '10px',
           cursor: 'pointer',
-          margin: '0 auto', // Center horizontally
-          display: 'block', // Make it a block-level element
-          width: '150px', // Set a specific width
+          margin: '0 auto', 
+          display: 'block', 
+          width: '150px', 
           color: 'white',
           textDecoration: 'none'
-        }}
-      >
+        }}>
         <Link className="page-button" to="/nomad">
           Back to Home
         </Link>
-      </button>
+      </button> */}
+
+<button
+  style={{fontSize: '16px', padding: '10px', marginTop: '10px', cursor: 'pointer',margin: '0 auto', display: 'block', width: '150px', color: 'white', textDecoration: 'none'}}
+  onClick={() => navigate('/nomad')}
+  className="page-button">
+  Back to Home
+</button>
+
+
     </div>
   );
 };

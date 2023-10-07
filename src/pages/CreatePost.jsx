@@ -76,10 +76,12 @@ const CreatePost = ({user, setAllPosts, posts}) => {
           <textarea id="caption" name="caption" value={post.caption} onChange={handleChange} style={{ width: '100%', padding: '5px 7px', border: '2px solid #ddd', borderRadius: '5px', backgroundColor: '#eee' }}/>
         </div>
 
-        <button style={{fontFamily:"Quicksand", cursor: "pointer", textDecoration:"none", color:"white" }}type="submit" className="page-button">Upload Blog Post</button> 
+        <button style={{fontFamily:"Quicksand", cursor: "pointer", textDecoration:"none", color:"white" }}type="submit" className="page-button">
+          Upload Blog Post
+          </button> 
 
-        <button style={{fontFamily:"Quicksand", cursor: "pointer", textDecoration:"none", color:"white" }}>
-        <Link className="page-button" to="/nomad"> Back to Home</Link>
+        <button style={{ fontFamily: "Quicksand", cursor: "pointer", textDecoration: "none", color: "white" }} onClick={() => history('/nomad')} className="page-button">
+            Back to Home
         </button>
 
       </form>
